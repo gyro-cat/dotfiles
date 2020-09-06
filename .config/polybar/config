@@ -1,0 +1,277 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;==========================================================
+
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #0a6cf5
+secondary = #e60053
+alert = #bd2c40
+
+
+[bar/i3]
+width = 100%
+height = 18 
+radius-top = 0
+radius-bottom = 0
+fixed-center = true 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Terminus:style=Bold:size=8
+
+modules-left = i3 
+modules-center = date 
+modules-right = pulseaudio wlan battery 
+
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:150:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.background}
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-separator = |
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = Brightness:
+
+bar-width = 20
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.primary} 
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/brightnessctl]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = WLAN: <label-connected>
+format-connected-underline = ${colors.background}
+format-connected-background = ${colors.primary}
+label-connected = %essid%
+format-connected-padding = 1
+
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▅
+ramp-signal-4 = ▇
+ramp-signal-foreground = ${colors.foreground}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = 
+date-alt = "%Y-%m-%d "
+
+time = "%H:%M "
+time-alt = "%H:%M "
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+format-background = ${colors.primary}
+format-underline = ${colors.background}
+
+label = %date% %time%
+label-padding = 0
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL: %percentage%%
+label-volume-foreground = ${root.foreground}
+label-volume-background = ${colors.primary}
+label-volume-underline = ${colors.background}
+label-volume-padding = 1
+
+label-muted = muted
+label-muted-foreground = ${colors.foreground-alt} 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.primary}
+bar-volume-foreground-1 = ${colors.primary}
+bar-volume-foreground-2 = ${colors.primary}
+bar-volume-foreground-3 = ${colors.primary}
+bar-volume-foreground-4 = ${colors.primary}
+bar-volume-foreground-5 = ${colors.primary}
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = -
+bar-volume-fill-font = 2
+bar-volume-empty = -
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 97
+
+format-charging = BAT: <label-charging>
+format-charging-background = #1b9300
+format-charging-underline = ${colors.background}
+format-charging-padding = 1
+
+format-discharging = BAT: <label-discharging>
+format-discharging-background = ${colors.primary}
+format-discharging-underline = ${colors.background}
+format-discharging-padding = 1
+
+format-full-prefix = "BAT:"
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+[settings]
+screenchange-reload = true
+compositing-background = picom 
+
+[global/wm]
+margin-top = 0 
+margin-bottom = 5
+
+;==========================================================
+;
+;        _/
+;       _/
+;      _/      _/_/_/
+;     _/_/_/  _/        _/_/_/  _/    _/    _/ _/_/ _/_/
+;    _/   _/  _/_/_/   _/   _/  _/  _/_/  _/  _/  _/  _/
+;   _/   _/        _/ _/   _/   _/_/  _/_/   _/  _/  _/
+;  _/_/_/    _/_/_/  _/_/_/     _/    _/    _/  _/  _/
+;                   _/
+;                  _/
+;                 _/
+;
+;==========================================================
+
+[bar/bspwm]
+width = 100%
+height = 18 
+radius-top = 0
+radius-bottom = 0
+fixed-center = true 
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Terminus:style=Bold:size=8
+
+modules-left = bspwm
+modules-center = xwindow 
+modules-right = pulseaudio wlan date battery 
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.primary}
+label-focused-underline= ${colors.background}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+label-separator = |
