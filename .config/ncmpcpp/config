@@ -1,11 +1,16 @@
+# directories
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory = ~/.config/ncmpcpp/lyrics
 mpd_music_dir = ~/Music
+
+# visulaizer
 visualizer_fifo_path = /tmp/mpd.fifo
 visualizer_in_stereo = no
 visualizer_sync_interval = 10
 visualizer_type = wave 
 visualizer_color = 256
+
+# ui
 playlist_disable_highlight_delay = 4 
 message_delay_time = 4 
 song_list_format = {%a - }{%t}|{$8%f$9}$R{$(blue)(%l)$9}
@@ -31,10 +36,14 @@ media_library_albums_split_by_date = yes
 screen_switcher_mode = playlist, media_library, visualizer
 startup_screen = media_library 
 ignore_leading_the = yes
+
+# other options
 mouse_support = no
 search_engine_default_search_mode = 2
 external_editor = vim
 use_console_editor = yes
+
+# colours
 main_window_color = 256
 color1 = white
 color2 = black
