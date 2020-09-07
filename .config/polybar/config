@@ -28,7 +28,7 @@ background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #0a6cf5
+primary = #003193
 secondary = #e60053
 alert = #bd2c40
 
@@ -70,7 +70,7 @@ cursor-click = pointer
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:150:...%
+label = %title:0:100:...%
 
 [module/i3]
 type = internal/i3
@@ -138,26 +138,25 @@ ramp-signal-0 = ▁
 ramp-signal-1 = ▂
 ramp-signal-2 = ▃
 ramp-signal-3 = ▅
-ramp-signal-4 = ▇
+ramp-signal-4 Italic= ▇
 ramp-signal-foreground = ${colors.foreground}
 
 [module/date]
 type = internal/date
 interval = 5
 
-date = 
 date-alt = "%Y-%m-%d "
 
-time = "%H:%M "
-time-alt = "%H:%M "
+time = %H:%M
+time-alt = %H:%M
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-background = ${colors.primary}
 format-underline = ${colors.background}
 
-label = %date% %time%
-label-padding = 0
+label = %date%%time%
+label-padding = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -172,7 +171,7 @@ label-volume-padding = 1
 label-muted = muted
 label-muted-foreground = ${colors.foreground-alt} 
 
-bar-volume-width = 10
+bar-volume-width = 11
 bar-volume-foreground-0 = ${colors.primary}
 bar-volume-foreground-1 = ${colors.primary}
 bar-volume-foreground-2 = ${colors.primary}
@@ -183,9 +182,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = -
+bar-volume-fill = |
 bar-volume-fill-font = 2
-bar-volume-empty = -
+bar-volume-empty = |
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
@@ -234,16 +233,13 @@ margin-bottom = 5
 
 [bar/bspwm]
 width = 100%
-height = 18 
+height = 16 
 radius-top = 0
 radius-bottom = 0
 fixed-center = true 
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
 
 border-size = 0
 border-color = #00000000
@@ -254,7 +250,7 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Terminus:style=Bold:size=8
+font-0 = Liberation Mono:style=Italic:size=8
 
 modules-left = bspwm
 modules-center = xwindow 
@@ -270,19 +266,19 @@ cursor-click = pointer
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.primary}
 label-focused-underline= ${colors.background}
 label-focused-padding = 1
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 1
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
 
