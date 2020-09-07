@@ -1,0 +1,63 @@
+Xcursor.theme: Adwaita
+
+! clickable URLs
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+
+! font
+URxvt.font: xft:Liberation Mono:size=9
+
+! hide mouse cursor while typing or after 1 second of inactivity
+URxvt.pointerBlank : true
+URxvt.pointerBlankDelay : 1
+
+! scroll settings
+URxvt.scrollBar : false
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+URxvt.saveLines: 10000
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! colours
+
+! special
+*.foreground:   #b4b5b7
+*.background:   #1c1e26
+*.cursorColor:  #b4b5b7
+
+! black
+*.color0:       #1c1e26
+*.color8:       #6f6f70
+
+! red
+*.color1:       #e95678
+*.color9:       #e95678
+
+! green
+*.color2:       #29d398
+*.color10:      #29d398
+
+! yellow
+*.color3:       #fac29a
+*.color11:      #fac29a
+
+! blue
+*.color4:       #26bbd9
+*.color12:      #26bbd9
+
+! magenta
+*.color5:       #ee64ac
+*.color13:      #ee64ac
+
+! cyan
+*.color6:       #59e1e3
+*.color14:      #59e1e3
+
+! white
+*.color7:       #cbced0
+*.color15:      #e3e6ee
+
