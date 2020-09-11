@@ -19,5 +19,9 @@ bspc config focused_border_color "#0a6cf5"
 bspc config urgent_border_color  "#bd2c40"
 
 # Rules
+bspc rule -a Blender state=pseudo_tiled
+bspc rule -a Firefox desktop='^2'
+bspc rule -a Steam state=floating
+bspc rule -a mpv state=fullscreen
 bspc rule -a feh state=floating
 bspc rule -a Galculator state=floating
