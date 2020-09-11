@@ -20,18 +20,15 @@ XF86MonBrightness{Up,Down}
 
 # pactl audio keybinds
 XF86Audio{Raise,Lower}Volume
-	pactl set-sink-volume @DEFAULT_SINK@ {+,-}10%
+	pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
 
 # mpd commands
 XF86Audio{Play,Prev,Next,Stop}
 	mpc -q {toggle,prev,next,single}
 
 # maim screenshots
-Print
-	maim -s | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png
-
-shift + Print
-	maim | tee /tmp/$(date +%s).png | xclip -selection clipboard -t image/png
+Print {_,+ shift}
+	maim -{su,u} | tee /tmp/maim$(date +%s).png | xclip -selection clipboard -t image/png
 
 #
 # bspwm hotkeys
