@@ -2,9 +2,9 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
-super + Return
-	urxvt
+# terminal emulator (+shift for floating instance)
+super + {_,shift + }Return
+	{urxvt,bspc rule --add 'URxvt' --one-shot state=floating && urxvt}
 
 # program launcher
 super + @space
@@ -12,7 +12,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Config reloaded'
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded'
 
 # brightness control
 XF86MonBrightness{Up,Down}
@@ -36,7 +36,7 @@ Print {_,+ shift}
 
 # quit/restart bspwm
 super + shift + {e,r}
-	bspc {quit,wm -r}
+	bspc {quit,wm -r;notify-send 'bspwm' 'Reloaded'}
 
 # close and kill
 super + {_,shift + }q
@@ -79,16 +79,12 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+super + {_,shift + }Tab
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
