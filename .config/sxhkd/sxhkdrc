@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+# switch between it and us keyboard layouts
+super + {_,shift + }u
+	setxkbmap {it;notify-send 'Keyboard' 'Set layout to IT',us;notify-send 'Keyboard' 'Set layout to US'}
+
 # terminal emulator (+shift for floating instance)
 super + {_,shift + }Return
 	{urxvt,bspc rule --add 'URxvt' --one-shot state=floating && urxvt}
