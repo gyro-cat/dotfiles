@@ -1,5 +1,9 @@
 Xcursor.theme: Adwaita
 
+! scroll one line with shift-up, shift-down
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
 ! clickable URLs
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
