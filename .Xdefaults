@@ -1,5 +1,9 @@
 Xcursor.theme: Adwaita
 
+! remove keycap picture insert mode
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! scroll one line with shift-up, shift-down
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
