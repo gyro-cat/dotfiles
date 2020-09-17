@@ -1,21 +1,31 @@
 Xcursor.theme: Adwaita
 
-! remove keycap picture insert mode
+! remove keycap picture insert mode/ISO14755 mode
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 ! scroll one line with shift-up, shift-down
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Shift-Up: command:\033]720;1\007
+URxvt.keysym.Control-Shift-Down: command:\033]721;1\007
 
-! clickable URLs
-URxvt.perl-ext-common: default,matcher
+! extensions
+URxvt.perl-ext-common: default,matcher,url-select,keyboard-select
+
+! matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 URxvt.matcher.rend.0: Uline Bold fg5
 
+! url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+! keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
 ! font
-URxvt.font: xft:Liberation Mono:size=9
+URxvt.font: xft:Rec Mono Duotone:size=9
 
 ! hide mouse cursor while typing or after 1 second of inactivity
 URxvt.pointerBlank : true
