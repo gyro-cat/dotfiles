@@ -12,6 +12,11 @@ set relativenumber
 set ruler
 set scrolloff=5
 
+set nowrap
+set sidescrolloff=5
+set lz
+set rdt=10
+
 set incsearch
 set ignorecase
 set hlsearch
@@ -29,3 +34,4 @@ set pastetoggle=<F11>
 
 set path+=**
 set wildmenu
+
