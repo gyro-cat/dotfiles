@@ -15,7 +15,6 @@ set scrolloff=5
 set nowrap
 set sidescrolloff=5
 set lz
-set rdt=10
 
 set incsearch
 set ignorecase
