@@ -1,0 +1,13 @@
+#
+# ~/.aliases
+#
+
+alias ls='ls --color=auto --group-directories-first'
+alias sl='ls --color=auto --group-directories-first'
+alias cp='cp -ri'
+alias fehh='feh -d.B black -g 1000x900'
+alias fehf='feh -d.B black -g 1920x1080'
+alias :q='exit'
+alias pt='ping 1.1.1.1'
+alias mpvl='mpv --loop'
+alias pubip='curl ifconfig.me'
