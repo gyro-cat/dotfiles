@@ -1,5 +1,8 @@
-Xcursor.theme: Adwaita
+Xcursor.theme: macOSBigSur
+Xcursor.size: 24
 
+
+!! URXVT SETTINGS !!
 ! remove keycap picture insert mode/ISO14755 mode
 URxvt.iso14755: false
 URxvt.iso14755_52: false
@@ -25,7 +28,9 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 ! font
-URxvt.font: xft:Rec Mono Duotone:size=9
+! URxvt.font: xft:Source Code Pro:size=10
+URxvt.font: xft:Roboto Mono:size=9
+
 
 ! hide mouse cursor while typing or after 1 second of inactivity
 URxvt.pointerBlank : true
@@ -53,29 +58,69 @@ URxvt.secondaryScroll: 0
 
 ! red
 *.color1:       #e95678
-*.color9:       #e95678
+*.color9:       #e96f8b
 
 ! green
 *.color2:       #29d398
-*.color10:      #29d398
+*.color10:      #81d3b7
 
 ! yellow
 *.color3:       #fac29a
-*.color11:      #fac29a
+*.color11:      #faddc9
 
 ! blue
-*.color4:       #26bbd9
-*.color12:      #26bbd9
+!*.color4:       #26bbd9
+*.color4:		#5fafff 
+*.color12:      #5ec4d9
 
 ! magenta
 *.color5:       #ee64ac
-*.color13:      #ee64ac
+*.color13:      #ee9dc7
 
 ! cyan
 *.color6:       #59e1e3
-*.color14:      #59e1e3
+*.color14:      #8ee2e3
 
 ! white
 *.color7:       #cbced0
-*.color15:      #e3e6ee
+*.color15:      #eeeeee
 
+
+! old colours
+!
+!! special
+!*.foreground:   #b4b5b7
+!*.background:   #1c1e26
+!*.cursorColor:  #b4b5b7
+!
+!! black
+!*.color0:       #1c1e26
+!*.color8:       #6f6f70
+!
+!! red
+!*.color1:       #e95678
+!*.color9:       #e95678
+!
+!! green
+!*.color2:       #29d398
+!*.color10:      #29d398
+!
+!! yellow
+!*.color3:       #fac29a
+!*.color11:      #fac29a
+!
+!! blue
+!*.color4:       #26bbd9
+!*.color12:      #26bbd9
+!
+!! magenta
+!*.color5:       #ee64ac
+!*.color13:      #ee64ac
+!
+!! cyan
+!*.color6:       #59e1e3
+!*.color14:      #59e1e3
+!
+!! white
+!*.color7:       #cbced0
+!*.color15:      #e3e6ee
