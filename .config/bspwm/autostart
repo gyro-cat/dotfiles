@@ -8,4 +8,8 @@ sxhkd &
 #feh --bg-fill /path/to/picture.png
 #picom -b &
 #mpd &
-#redshift &
+
+# multiple instances of redshift make a mess
+#if [ -z $(pidof redshift) ]; then
+#    redshift &
+#fi
