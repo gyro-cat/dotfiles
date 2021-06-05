@@ -1,0 +1,43 @@
+#! /bin/sh
+
+wid=$1
+class=$2
+instance=$3
+consequences=$4
+
+if [ "$class" = Steam ] ; then
+	title=$(xtitle "$wid")
+	case "$title" in
+			Steam)
+			echo "state=tiled follow=no"
+			;;
+	esac
+fi
+
+if [ "$class" = itch ] ; then
+	title=$(xtitle "$wid")
+	case "$title" in
+			'Preferences - itch'|'Downloads - itch')
+			echo "floating=yes"
+			;;
+	esac
+fi
+
+if [ "$class" = Blender ] ; then
+	title=$(xtitle "$wid")
+	case "$title" in
+			'Blender Preferences'|'Blender Render')
+			echo "state=floating"
+			;;
+	esac
+fi
+
+
+if [ "$class" = krita ] ; then
+	title=$(xtitle "$wid")
+	case "$title" in
+			'Krita - Edit Text')
+			echo "state=floating"
+			;;
+	esac
+fi

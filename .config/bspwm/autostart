@@ -1,0 +1,11 @@
+#! /bin/sh
+
+sxhkd &
+#xrandr --output XX --mode 0000x0000 --rate 00 &
+#xrdb ~/.Xdefaults &
+#xsetroot -cursor_name left_ptr &
+#polybar bspwm &
+#feh --bg-fill /path/to/picture.png
+#picom -b &
+#mpd &
+#redshift &
