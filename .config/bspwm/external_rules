@@ -18,7 +18,7 @@ if [ "$class" = itch ] ; then
 	title=$(xtitle "$wid")
 	case "$title" in
 			'Preferences - itch'|'Downloads - itch')
-			echo "floating=yes"
+			echo "state=floating"
 			;;
 	esac
 fi
@@ -27,7 +27,7 @@ if [ "$class" = Blender ] ; then
 	title=$(xtitle "$wid")
 	case "$title" in
 			'Blender Preferences'|'Blender Render')
-			echo "floating=yes"
+			echo "state=floating"
 			;;
 	esac
 fi
