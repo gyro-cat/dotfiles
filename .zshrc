@@ -4,7 +4,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd nomatch
 unsetopt beep
-bindkey -v
 # End of lines configured by zsh-newuser-install
 source ~/.config/comprc
 source ~/.profile
