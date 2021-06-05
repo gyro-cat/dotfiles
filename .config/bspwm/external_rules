@@ -27,17 +27,7 @@ if [ "$class" = Blender ] ; then
 	title=$(xtitle "$wid")
 	case "$title" in
 			'Blender Preferences'|'Blender Render')
-			echo "state=floating"
-			;;
-	esac
-fi
-
-
-if [ "$class" = krita ] ; then
-	title=$(xtitle "$wid")
-	case "$title" in
-			'Krita - Edit Text')
-			echo "state=floating"
+			echo "floating=yes"
 			;;
 	esac
 fi
