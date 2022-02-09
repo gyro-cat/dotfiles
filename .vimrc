@@ -8,7 +8,6 @@ set shiftwidth=4
 set smartindent
 
 set nu
-set relativenumber
 set ruler
 set scrolloff=5
 
